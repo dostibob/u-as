@@ -3,45 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cangrejito</title>
-    <!-- FontAwesome para iconos -->
+    <title>Cangrejito | Uñas & Estilo</title>
+
+    <!-- Favicon SVG -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💅</text></svg>">
+
+    <!-- FontAwesome Font Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <style>
         :root {
-            --primary-color: #d4a373; /* Tono dorado/cálido elegante */
-            --bg-color: #faf6f0;      /* Fondo beige suave */
-            --card-bg: #ffffff;      /* Fondo de tarjetas */
-            --text-color: #4a4a4a;    /* Texto principal */
-            --accent-pink: #e8b4b8;   /* Rosa pastel para detalles */
+            --primary-color: #d4a373;
+            --bg-color: #faf6f0;
+            --card-bg: #ffffff;
+            --text-color: #4a4a4a;
+            --accent-pink: #e8b4b8;
             --accent-pink-hover: #d89fb4;
+            --border-color: #f2f2f2;
+            --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.03);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
         }
 
-        * {
+        *, *::before, *::after {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
         }
 
         body {
             background-color: var(--bg-color);
             color: var(--text-color);
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
             display: flex;
             justify-content: center;
-            padding: 20px 16px 40px 16px;
+            padding: 20px 16px 40px;
             min-height: 100vh;
         }
 
-        /* CONTENEDOR PRINCIPAL FLUIDO */
         .container {
             width: 100%;
-            max-width: 900px; /* Expandido para aprovechar pantallas grandes */
+            max-width: 900px;
             margin: 0 auto;
             text-align: center;
         }
 
-        /* PERFIL Y LOGO */
+        /* --- PROFILE --- */
         .profile {
             margin-bottom: 40px;
         }
@@ -52,7 +58,7 @@
             border-radius: 50%;
             object-fit: cover;
             border: 3px solid var(--accent-pink);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            box-shadow: var(--shadow-md);
             background-color: #eee;
         }
 
@@ -69,16 +75,16 @@
             margin-top: 4px;
         }
 
-        /* PESTAÑAS (TABS) */
+        /* --- TABS --- */
         .tabs {
             display: flex;
             justify-content: center;
             background: var(--card-bg);
             border-radius: 30px;
             padding: 6px;
-            margin: 0 auto 24px auto;
-            max-width: 500px; /* Mantener pestañas legibles y estilizadas */
-            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+            margin: 0 auto 24px;
+            max-width: 500px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
         }
 
         .tab-btn {
@@ -92,7 +98,7 @@
             cursor: pointer;
             border-radius: 25px;
             transition: all 0.25s ease;
-            display: flex;
+            display: inline-flex;
             align-items: center;
             justify-content: center;
             gap: 8px;
@@ -104,7 +110,10 @@
             box-shadow: 0 2px 8px rgba(232, 180, 184, 0.4);
         }
 
-        /* CONTENIDO DE PESTAÑAS */
+        .tab-btn:hover:not(.active) {
+            color: var(--accent-pink-hover);
+        }
+
         .tab-content {
             display: none;
             animation: fadeIn 0.35s ease;
@@ -119,17 +128,17 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* SECCIÓN 1: REDES SOCIALES Y ENLACES */
+        /* --- SECCIÓN 1: REDES --- */
         .links-wrapper {
             display: flex;
             flex-direction: column;
-            gap: 30px;
+            gap: 20px;
             max-width: 500px;
             margin: 0 auto;
         }
 
         .link-btn {
-            display: flex;
+            display: inline-flex;
             align-items: center;
             justify-content: center;
             gap: 12px;
@@ -140,14 +149,14 @@
             text-decoration: none;
             font-weight: 600;
             border-radius: 16px;
-            border: 1px solid #f0f0f0;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
             transition: transform 0.2s, box-shadow 0.2s;
         }
 
         .link-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            box-shadow: var(--shadow-md);
         }
 
         .link-btn.whatsapp {
@@ -156,11 +165,11 @@
             border: none;
         }
 
-        /* SECCIÓN 2: CATÁLOGO DE PRECIOS Y SERVICIOS */
+        /* --- SECCIÓN 2: CATÁLOGO --- */
         .catalog-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 12px;
+            gap: 16px;
         }
 
         .catalog-item {
@@ -171,8 +180,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
-            border: 1px solid #f2f2f2;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
         }
 
         .catalog-info h3 {
@@ -195,10 +204,10 @@
             white-space: nowrap;
         }
 
-        /* SECCIÓN 3: GALERÍA DE FOTOS */
+        /* --- SECCIÓN 3: GALERÍA --- */
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr); /* 2 columnas en móviles */
+            grid-template-columns: repeat(2, 1fr);
             gap: 12px;
         }
 
@@ -215,6 +224,7 @@
             object-fit: cover;
             display: block;
             transition: transform 0.3s ease;
+            aspect-ratio: 1 / 1;
         }
 
         .gallery-item img:hover {
@@ -227,19 +237,14 @@
             color: #aaa;
         }
 
-        /* ===================================================
-        RESPONSIVE DESIGN (MEDIA QUERIES)
-           =================================================== */
-
-        /* Tablets (pantallas desde 600px) */
+        /* --- RESPONSIVE --- */
         @media (min-width: 600px) {
             .catalog-grid {
-                grid-template-columns: repeat(2, 1fr); /* 2 columnas de precios */
-                gap: 16px;
+                grid-template-columns: repeat(2, 1fr);
             }
 
             .gallery-grid {
-                grid-template-columns: repeat(3, 1fr); /* 3 columnas en la galería */
+                grid-template-columns: repeat(3, 1fr);
                 gap: 16px;
             }
 
@@ -248,7 +253,6 @@
             }
         }
 
-        /* Computadoras / Laptops (pantallas desde 900px) */
         @media (min-width: 900px) {
             .profile-img {
                 width: 130px;
@@ -260,7 +264,6 @@
             }
 
             .gallery-grid {
-                grid-template-columns: repeat(3, 1fr);
                 gap: 20px;
             }
 
@@ -272,140 +275,125 @@
 </head>
 <body>
 
-    <div class="container">
-        <!-- CABECERA Y FOTO DE PERFIL LOCAL -->
-        <div class="profile">
-            <img src="img/logo.jpg" alt="Logo de la Marca" class="profile-img">
-            <h1>@uñasxd</h1>
-            <p>💅 tedxto</p>
-        </div>
+    <main class="container">
+        <!-- PERFIL -->
+        <header class="profile">
+            <img src="Assets/asset1.jpg" alt="Logo Cangrejito" class="profile-img" width="110" height="110">
+            <h1>@Cangrejito</h1>
+            <p>Terapia en forma de manicura 💕</p>
+        </header>
 
-        <!-- PESTAÑAS NAVEGABLES -->
-        <div class="tabs">
-            <button class="tab-btn active" onclick="openTab(event, 'redes')">
-                <i class="fa-solid fa-link"></i> Redes
+        <!-- NAVEGACIÓN DE PESTAÑAS -->
+        <nav class="tabs" role="tablist" aria-label="Secciones principales">
+            <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="redes" id="tab-redes" onclick="switchTab(this, 'redes')">
+                <i class="fa-solid fa-link" aria-hidden="true"></i> Redes
             </button>
-            <button class="tab-btn" onclick="openTab(event, 'catalogo')">
-                <i class="fa-solid fa-list"></i> Precios
+            <button class="tab-btn" role="tab" aria-selected="false" aria-controls="catalogo" id="tab-catalogo" onclick="switchTab(this, 'catalogo')">
+                <i class="fa-solid fa-list" aria-hidden="true"></i> Precios
             </button>
-            <button class="tab-btn" onclick="openTab(event, 'galeria')">
-                <i class="fa-solid fa-camera"></i> Galería
+            <button class="tab-btn" role="tab" aria-selected="false" aria-controls="galeria" id="tab-galeria" onclick="switchTab(this, 'galeria')">
+                <i class="fa-solid fa-camera" aria-hidden="true"></i> Galería
             </button>
-        </div>
+        </nav>
 
-        <!-- PESTAÑA 1: REDES Y ENLACES DE CONTACTO -->
-        <div id="redes" class="tab-content active">
+        <!-- CONTENIDO PESTAÑA 1: REDES -->
+        <section id="redes" class="tab-content active" role="tabpanel" aria-labelledby="tab-redes">
             <div class="links-wrapper">
-                <a href="https://wa.me" target="_blank" class="link-btn whatsapp">
-                    <i class="fa-brands fa-whatsapp fa-lg"></i> WhatsApp
+                <a href="https://wa.me" target="_blank" rel="noopener noreferrer" class="link-btn whatsapp">
+                    <i class="fa-brands fa-whatsapp fa-lg" aria-hidden="true"></i> WhatsApp
                 </a>
-                <a href="https://instagram.com/" target="_blank" class="link-btn">
-                    <i class="fa-brands fa-instagram fa-lg" style="color: #E1306C;"></i> Instagram
+                <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" class="link-btn">
+                    <i class="fa-brands fa-instagram fa-lg" style="color: #E1306C;" aria-hidden="true"></i> Instagram
                 </a>
-                <a href="https://tiktok.com/" target="_blank" class="link-btn">
-                    <i class="fa-brands fa-tiktok fa-lg" style="color: #000000;"></i> TikTok
+                <a href="https://tiktok.com/" target="_blank" rel="noopener noreferrer" class="link-btn">
+                    <i class="fa-brands fa-tiktok fa-lg" style="color: #000000;" aria-hidden="true"></i> TikTok
                 </a>
             </div>
-        </div>
+        </section>
 
-        <!-- PESTAÑA 2: CATÁLOGO Y LISTA DE PRECIOS -->
-        <div id="catalogo" class="tab-content">
+        <!-- CONTENIDO PESTAÑA 2: CATÁLOGO -->
+        <section id="catalogo" class="tab-content" role="tabpanel" aria-labelledby="tab-catalogo" hidden>
             <div class="catalog-grid">
-                <div class="catalog-item">
+                <article class="catalog-item">
                     <div class="catalog-info">
                         <h3>Esculturales</h3>
-                        <p>Uñas acrilicas creadas desde cero sobre la uña natural</p>
+                        <p>Uñas acrílicas creadas desde cero sobre la uña natural</p>
                     </div>
                     <div class="price">Desde $250</div>
-                </div>
+                </article>
 
-                <div class="catalog-item">
+                <article class="catalog-item">
                     <div class="catalog-info">
                         <h3>cosa</h3>
-                        <p>descrip</p>
+                        <p>descripcion</p>
                     </div>
                     <div class="price">precio</div>
-                </div>
+                </article>
 
-                <div class="catalog-item">
+                <article class="catalog-item">
                     <div class="catalog-info">
                         <h3>cosa</h3>
-                        <p>descrip.</p>
+                        <p>descripcion</p>
                     </div>
                     <div class="price">precio</div>
-                </div>
+                </article>
 
-                <div class="catalog-item">
+                <article class="catalog-item">
                     <div class="catalog-info">
                         <h3>cosa</h3>
-                        <p>desc.</p>
+                        <p>descripcion</p>
                     </div>
                     <div class="price">precio</div>
-                </div>
+                </article>
 
-                <div class="catalog-item">
+                <article class="catalog-item">
                     <div class="catalog-info">
                         <h3>cosa</h3>
-                        <p>descrip.</p>
+                        <p>descripcion</p>
                     </div>
                     <div class="price">precio</div>
-                </div>
+                </article>
             </div>
-        </div>
+        </section>
 
-        <!-- PESTAÑA 3: GALERÍA CON IMÁGENES LOCALES -->
-        <div id="galeria" class="tab-content">
+        <!-- CONTENIDO PESTAÑA 3: GALERÍA -->
+        <section id="galeria" class="tab-content" role="tabpanel" aria-labelledby="tab-galeria" hidden>
             <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="img/trabajo1.jpg" alt="Diseño de uñas 1" loading="lazy">
-                </div>
-                <div class="gallery-item">
-                    <img src="img/trabajo2.jpg" alt="Diseño de uñas 2" loading="lazy">
-                </div>
-                <div class="gallery-item">
-                    <img src="img/trabajo3.jpg" alt="Diseño de uñas 3" loading="lazy">
-                </div>
-                <div class="gallery-item">
-                    <img src="img/trabajo4.jpg" alt="Diseño de uñas 4" loading="lazy">
-                </div>
-                <div class="gallery-item">
-                    <img src="img/trabajo5.jpg" alt="Diseño de uñas 5" loading="lazy">
-                </div>
-                <div class="gallery-item">
-                    <img src="img/trabajo6.jpg" alt="Diseño de uñas 6" loading="lazy">
-                </div>
-                                <div class="gallery-item">
-                    <img src="img/trabajo4.jpg" alt="Diseño de uñas 4" loading="lazy">
-                </div>
-                <div class="gallery-item">
-                    <img src="img/trabajo5.jpg" alt="Diseño de uñas 5" loading="lazy">
-                </div>
-                <div class="gallery-item">
-                    <img src="img/trabajo6.jpg" alt="Diseño de uñas 6" loading="lazy">
-                </div>
+                <div class="gallery-item"><img src="img/trabajo1.jpg" alt="Diseño de uñas 1" loading="lazy" decoding="async"></div>
+                <div class="gallery-item"><img src="img/trabajo2.jpg" alt="Diseño de uñas 2" loading="lazy" decoding="async"></div>
+                <div class="gallery-item"><img src="img/trabajo3.jpg" alt="Diseño de uñas 3" loading="lazy" decoding="async"></div>
+                <div class="gallery-item"><img src="img/trabajo4.jpg" alt="Diseño de uñas 4" loading="lazy" decoding="async"></div>
+                <div class="gallery-item"><img src="img/trabajo5.jpg" alt="Diseño de uñas 5" loading="lazy" decoding="async"></div>
+                <div class="gallery-item"><img src="img/trabajo6.jpg" alt="Diseño de uñas 6" loading="lazy" decoding="async"></div>
             </div>
-        </div>
+        </section>
 
-        <div class="footer-note">
-            <p>@ uñas y text ❤️</p>
-        </div>
-    </div>
+        <!-- FOOTER -->
+        <footer class="footer-note">
+            <p>© @Cangrejito — Dedicación, amor y compromiso 💅</p>
+        </footer>
+    </main>
 
-    <!-- SCRIPT PARA CAMBIAR ENTRE PESTAÑAS -->
+    <!-- SCRIPT MEJORADO -->
     <script>
-        function openTab(evt, tabName) {
-            const tabContents = document.getElementsByClassName("tab-content");
-            for (let i = 0; i < tabContents.length; i++) {
-                tabContents[i].classList.remove("active");
-            }
+        function switchTab(selectedBtn, tabId) {
+            // Actualizar estado visual y de accesibilidad de las pestañas
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                const isActive = btn === selectedBtn;
+                btn.classList.toggle('active', isActive);
+                btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+            });
 
-            const tabBtns = document.getElementsByClassName("tab-btn");
-            for (let i = 0; i < tabBtns.length; i++) {
-                tabBtns[i].classList.remove("active");
-            }
-
-            document.getElementById(tabName).classList.add("active");
-            evt.currentTarget.classList.add("active");
+            // Mostrar/ocultar paneles con atributo hidden
+            document.querySelectorAll('.tab-content').forEach(panel => {
+                const isActive = panel.id === tabId;
+                panel.classList.toggle('active', isActive);
+                if (isActive) {
+                    panel.removeAttribute('hidden');
+                } else {
+                    panel.setAttribute('hidden', '');
+                }
+            });
         }
     </script>
 </body>

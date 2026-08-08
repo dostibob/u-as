@@ -5,10 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cangrejito | Uñas & Estilo</title>
 
-    <!-- Favicon SVG -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💅</text></svg>">
 
-    <!-- FontAwesome Font Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
@@ -47,7 +45,6 @@
             text-align: center;
         }
 
-        /* --- PROFILE --- */
         .profile {
             margin-bottom: 40px;
         }
@@ -76,7 +73,6 @@
             margin-top: 4px;
         }
 
-        /* --- TABS --- */
         .tabs {
             display: flex;
             justify-content: center;
@@ -129,7 +125,6 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* --- SECCIÓN 1: REDES --- */
         .links-wrapper {
             display: flex;
             flex-direction: column;
@@ -166,7 +161,6 @@
             border: none;
         }
 
-        /* --- SECCIÓN 2: CATÁLOGO --- */
         .catalog-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -205,7 +199,6 @@
             white-space: nowrap;
         }
 
-        /* --- SECCIÓN 3: GALERÍA --- */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -238,7 +231,6 @@
             color: #aaa;
         }
 
-        /* --- RESPONSIVE --- */
         @media (min-width: 600px) {
             .catalog-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -277,14 +269,12 @@
 <body>
 
     <main class="container">
-        <!-- PERFIL -->
         <header class="profile">
-            <img src="Assets/asset1.jpg" alt="Logo Cangrejito" class="profile-img" width="110" height="110">
+            <img src="Assets/assets1.jpg" alt="Logo Cangrejito" class="profile-img" width="110" height="110">
             <h1>Cangrejito Nails</h1>
             <p>Terapia en forma de manicura 💕</p>
         </header>
 
-        <!-- NAVEGACIÓN DE PESTAÑAS -->
         <nav class="tabs" role="tablist" aria-label="Secciones principales">
             <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="redes" id="tab-redes" onclick="switchTab(this, 'redes')">
                 <i class="fa-solid fa-link" aria-hidden="true"></i> Redes
@@ -297,7 +287,6 @@
             </button>
         </nav>
 
-        <!-- CONTENIDO PESTAÑA 1: REDES -->
         <section id="redes" class="tab-content active" role="tabpanel" aria-labelledby="tab-redes">
             <div class="links-wrapper">
                 <a href="https://wa.me" target="_blank" rel="noopener noreferrer" class="link-btn whatsapp">
@@ -312,7 +301,6 @@
             </div>
         </section>
 
-        <!-- CONTENIDO PESTAÑA 2: CATÁLOGO -->
         <section id="catalogo" class="tab-content" role="tabpanel" aria-labelledby="tab-catalogo" hidden>
             <div class="catalog-grid">
                 <article class="catalog-item">
@@ -346,11 +334,9 @@
                     </div>
                     <div class="price"></div>
                 </article>
-
             </div>
         </section>
 
-        <!-- CONTENIDO PESTAÑA 3: GALERÍA -->
         <section id="galeria" class="tab-content" role="tabpanel" aria-labelledby="tab-galeria" hidden>
             <div class="gallery-grid">
                 <div class="gallery-item"><img src="img/trabajo1.jpg" alt="Diseño de uñas 1" loading="lazy" decoding="async"></div>
@@ -362,23 +348,19 @@
             </div>
         </section>
 
-        <!-- FOOTER -->
         <footer class="footer-note">
             <p>@Cangrejito_Nails — Dedicación, amor y compromiso 💅</p>
         </footer>
     </main>
 
-    <!-- SCRIPT MEJORADO -->
     <script>
         function switchTab(selectedBtn, tabId) {
-            // Actualizar estado visual y de accesibilidad de las pestañas
             document.querySelectorAll('.tab-btn').forEach(btn => {
                 const isActive = btn === selectedBtn;
                 btn.classList.toggle('active', isActive);
                 btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
             });
 
-            // Mostrar/ocultar paneles con atributo hidden
             document.querySelectorAll('.tab-content').forEach(panel => {
                 const isActive = panel.id === tabId;
                 panel.classList.toggle('active', isActive);
